@@ -1,0 +1,11 @@
+>>> D = {‘say’: 5, ‘get’: ‘shrubbery’}
+>>> ‘%(say)s => %(get)s’ % D # выражение: ссылка на ключ
+‘5 => shrubbery’
+>>> ‘{say} => {get}’.format(**D) # метод: ссылка на ключ
+‘5 => shrubbery’
+>>> from person import Person
+>>> bob = Person(‘Bob’, 35)
+>>> ‘%(name)s, %(age)s’ % bob.__dict__ # выражение: ключи __dict__
+‘Bob, 35’
+>>> ‘{0.name} => {0.age}’.format(bob) # метод: синтаксис атрибутов
+‘Bob => 35’
